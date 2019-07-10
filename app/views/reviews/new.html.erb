@@ -1,0 +1,14 @@
+<nav class="navbar navbar-light bg-light">
+  <%= link_to "Yelp Reviews", restaurants_path, class: 'navbar-brand' %>
+  <%= link_to "New Review", new_restaurant_review_path(@restaurant) %>
+</nav>
+
+
+<div class="container">
+  <h1>New review</h1>
+  <%= simple_form_for [@restaurant, @review] do |f| %>
+  <%= f.input :content %>
+  <%= f.input :rating %>
+  <%= f.submit "add a review", class: "btn btn-primary" %>
+  <% end %>
+</div>

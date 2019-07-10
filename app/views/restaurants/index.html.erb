@@ -1,0 +1,13 @@
+<nav class="navbar navbar-light bg-light">
+  <%= link_to "Yelp Reviews", restaurants_path, class: 'navbar-brand' %>
+  <%= link_to "New Restaurant", new_restaurant_path %>
+</nav>
+
+<div class="container">
+  <% @restaurants.each do |restaurant| %>
+  <div>
+    <h3><%= link_to restaurant.name, restaurant_path(restaurant) %></h3>
+  </div>
+  <% end %>
+</div>
+
